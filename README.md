@@ -89,3 +89,61 @@ Future improvements may include:
 ## License
 
 This project is intended for educational and portfolio purposes.
+
+## Example Output
+
+A typical NetScope diagnostic session:
+
+```text
+$ python netscope.py
+
+[+] Checking example.com:443...
+[✓] Port 443 is reachable.
+
+[+] Measuring latency to example.com...
+[X] Unable to measure latency.
+
+========================================
+Diagnostic complete.
+========================================
+
+## How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/brice0087/netscope.git
+cd netscope
+
+```
+
+Run NetScope:
+
+```bash
+python netscope.py
+```
+
+## Project Structure
+
+```text
+netscope/
+├── netscope.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+## What I Learned
+
+Building NetScope gave me hands-on experience with Python networking, DNS resolution, TCP connections, latency testing, exception handling, and command-line applications.
+
+I also gained experience organizing a software project, documenting technical functionality, testing network operations, and handling situations where network requests fail without causing the application to crash.
+
+## Future Improvements
+
+- Add command-line arguments for custom hosts and ports
+- Provide more detailed latency statistics
+- Add network interface diagnostics
+- Add configurable multi-port testing
+- Generate diagnostic reports and logs
+- Add automated unit tests
