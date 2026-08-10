@@ -1,5 +1,7 @@
 # NetScope
 
+[![Run NetScope Tests](https://github.com/brice0087/netscope/actions/workflows/tests.yml/badge.svg)](https://github.com/brice0087/netscope/actions/workflows/tests.yml)
+
 A lightweight Python network diagnostic toolkit built to make common network troubleshooting tasks faster and easier.
 
 NetScope combines several useful diagnostics into one command-line application, including connectivity testing, DNS resolution, port checking, latency measurement, and local network information.
