@@ -20,11 +20,14 @@ def check_connectivity(host="8.8.8.8"):
 
         if result.returncode == 0:
             print("[✓] Host is reachable.")
-        else:
-            print("[X] Host could not be reached.")
+            return True
+
+        print("[X] Host could not be reached.")
+        return False
 
     except Exception as error:
         print(f"[X] Connectivity test failed: {error}")
+        return False
 
 
 def dns_lookup(domain):
@@ -62,13 +65,13 @@ def measure_latency(host="8.8.8.8"):
     start = time.perf_counter()
 
     try:
-        with socket.create_connection((host, 53), timeout=3):
+        with socket.create_connection((host, 443), timeout=5):
             latency = (time.perf_counter() - start) * 1000
             print(f"[✓] Approximate latency: {latency:.2f} ms")
             return latency
 
-    except OSError:
-        print("[X] Unable to measure latency.")
+    except OSError as error:
+        print(f"[X] Unable to measure latency: {error}")
         return None
 
 
