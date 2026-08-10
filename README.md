@@ -4,7 +4,7 @@
 
 **A lightweight Python network diagnostic toolkit for connectivity testing, DNS resolution, TCP port checks, and latency analysis.**
 
-NetScope combines common network troubleshooting tasks into a simple command-line application. The project was built to demonstrate practical Python development, networking fundamentals, automated testing, error handling, and continuous integration.
+NetScope combines common network troubleshooting tasks into a simple command-line application. The project demonstrates practical Python development, networking fundamentals, automated testing, error handling, version control, and continuous integration.
 
 ## Features
 
@@ -13,8 +13,8 @@ NetScope combines common network troubleshooting tasks into a simple command-lin
 - TCP port availability checks
 - TCP-based latency measurement
 - Local hostname and IP information
-- Cross-platform connectivity support
-- Graceful error handling
+- Cross-platform connectivity testing
+- Graceful network error handling
 - Interactive command-line interface
 - Automated unit testing
 - Continuous integration with GitHub Actions
@@ -24,17 +24,17 @@ NetScope combines common network troubleshooting tasks into a simple command-lin
 - Python 3
 - TCP/IP
 - DNS
-- Python Socket Programming
+- Socket Programming
 - Python `subprocess`
 - Git
 - GitHub
 - GitHub Actions
-- `unittest`
+- Python `unittest`
 - Linux
 
 ## Getting Started
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/brice0087/netscope.git
@@ -87,11 +87,11 @@ Diagnostic complete.
 ================================================
 ```
 
-> Network results such as IP addresses and latency will vary depending on the system and connection.
+> Network results such as IP addresses and latency will vary depending on the system, location, and connection.
 
 ## Testing
 
-NetScope includes automated unit tests for core networking functionality.
+NetScope includes automated unit tests covering core networking functionality.
 
 Run the test suite with:
 
@@ -99,7 +99,7 @@ Run the test suite with:
 python -m unittest test_netscope.py
 ```
 
-Example:
+Example successful test run:
 
 ```text
 ....
@@ -125,38 +125,51 @@ netscope/
 └── README.md
 ```
 
-## How It Works
+## How NetScope Works
 
-NetScope breaks common network diagnostics into reusable Python functions.
+NetScope separates common network diagnostics into reusable Python functions.
 
-**Connectivity testing** checks whether an external host can be reached.
+### Connectivity Testing
 
-**DNS resolution** converts a domain name into its corresponding IP address.
+NetScope checks whether an external host is reachable and handles failed connectivity attempts without crashing the application.
 
-**Port testing** attempts TCP connections to ports 80 and 443 to determine whether common HTTP and HTTPS services are reachable.
+### DNS Resolution
 
-**Latency measurement** measures the approximate time required to establish a TCP connection with the target host.
+The DNS lookup function resolves a domain name to its corresponding IP address using Python's networking capabilities.
 
-Each diagnostic operation includes exception handling so that failed network requests do not cause the application to crash.
+### TCP Port Testing
+
+NetScope attempts TCP connections to ports **80** and **443** to determine whether common HTTP and HTTPS services are reachable.
+
+### Latency Measurement
+
+NetScope measures approximate latency by timing the establishment of a TCP connection to the target host.
+
+### Error Handling
+
+Network operations can fail for many reasons. NetScope uses exception handling so failed DNS lookups, unreachable ports, timeouts, and connection errors can be reported without terminating the entire application.
+
+## Software Engineering Practices
+
+This project incorporates several software engineering practices beyond the core networking functionality:
+
+- Modular Python functions
+- Automated unit testing
+- Git version control
+- GitHub repository management
+- Continuous integration
+- GitHub Actions workflows
+- Error and exception handling
+- Technical documentation
+- Incremental development and debugging
 
 ## What I Learned
 
-Building NetScope gave me hands-on experience with:
+Building NetScope gave me hands-on experience working with Python networking, DNS resolution, TCP connections, port testing, latency measurement, exception handling, and command-line applications.
 
-- Python networking and socket programming
-- DNS resolution
-- TCP connections and ports
-- Network troubleshooting
-- Exception handling
-- Modular Python functions
-- Unit testing
-- Git version control
-- GitHub workflows
-- Continuous integration with GitHub Actions
-- Technical documentation
-- Debugging applications across different environments
+I also gained practical experience writing automated tests, debugging network behavior across different environments, using Git for version control, and configuring GitHub Actions to automatically validate code after changes are pushed.
 
-This project also helped me understand how software engineering practices such as testing, version control, documentation, and continuous integration can be applied to practical networking tools.
+The project reinforced how testing, documentation, version control, debugging, and continuous integration work together in a software development workflow.
 
 ## Future Improvements
 
@@ -168,10 +181,10 @@ Planned improvements include:
 - Configurable multi-port testing
 - Diagnostic report generation
 - Logging support
-- Additional automated test coverage
+- Expanded automated test coverage
 - Desktop graphical interface
 - Packaged executable version
 
 ## License
 
-This project is available for educational and portfolio purposes.
+This project is intended for educational and portfolio purposes.
